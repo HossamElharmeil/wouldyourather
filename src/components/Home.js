@@ -13,8 +13,8 @@ const Home = () => {
     const questionsEntries = Object.entries(questions)
 
     return <div>
-        <ul>
-            {questionsEntries.map(([key, value]) => {
+        <ul className='questions'>
+            {questionsEntries.map(([_, value]) => {
                 console.log(value)
                 return <li>
                     {value.id}
