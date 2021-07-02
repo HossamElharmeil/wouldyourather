@@ -5,8 +5,8 @@ const TheNavBar = () => {
         <Navbar.Brand href="#home">Navbar</Navbar.Brand>
         <Nav className="mr-auto">
             <Nav.Link href="/">Home</Nav.Link>
-            <Nav.Link href="/home">Features</Nav.Link>
-            <Nav.Link href="#pricing">Pricing</Nav.Link>
+            <Nav.Link href="/new">New Question</Nav.Link>
+            <Nav.Link href="/leaderboard">Leaderboard</Nav.Link>
         </Nav>
     </Navbar>
 }
