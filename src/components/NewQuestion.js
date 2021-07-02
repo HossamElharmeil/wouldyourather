@@ -1,13 +1,17 @@
 import { useState } from "react"
+import { useDispatch } from "react-redux"
+import { addQuestion } from "../redux/actions/questionsActions"
 
 const NewQuestion = () => {
-    const [optionOne, setOptionOne] = useState('')
-    const [optionTwo, setOptionTwo] = useState('')
+    const [optionOneText, setOptionOneText] = useState('')
+    const [optionTwoText, setOptionTwoText] = useState('')
+
+    const dispatch = useDispatch()
 
     const handleSubmit = (e) => {
         e.preventDefault()
 
-        console.log(optionOne, optionTwo)
+        dispatch(addQuestion({optionOneText, optionTwoText, author: 'tylermcginnis'}))
     }
 
     return <div className='new-question'>
@@ -16,13 +20,13 @@ const NewQuestion = () => {
                 type='text'
                 name='option-one'
                 placeholder='Enter option one'
-                onChange={(e) => setOptionOne(e.target.value)}
+                onChange={(e) => setOptionOneText(e.target.value)}
             />
             <input
                 type='text'
                 name='option-two'
                 placeholder='Enter option two'
-                onChange={(e) => setOptionTwo(e.target.value)}
+                onChange={(e) => setOptionTwoText(e.target.value)}
             />
             <button type='submit'>Submit</button>
         </form>

@@ -12,9 +12,9 @@ import { Provider } from 'react-redux';
 
 function App() {
   return <>
-    <TheNavBar />
     <Provider store={store}>
       <BrowserRouter>
+        <TheNavBar />
         <Switch>
           <Route exact path='/' component={Home} />
           <Route exact path='/new' component={NewQuestion} />
