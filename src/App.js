@@ -1,5 +1,6 @@
-import logo from './logo.svg'
 import './App.css'
+import 'bootstrap/dist/css/bootstrap.min.css';
+
 import TheHeader from './components/TheHeader'
 import TheNavBar from './components/TheNavBar'
 
