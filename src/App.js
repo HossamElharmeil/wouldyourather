@@ -1,5 +1,5 @@
 import './App.css'
-import 'bootstrap/dist/css/bootstrap.min.css';
+import 'bootstrap/dist/css/bootstrap.min.css'
 
 import TheNavBar from './components/TheNavBar'
 
@@ -8,7 +8,8 @@ import Home from './components/Home'
 import NewQuestion from './components/NewQuestion'
 import Leaderboard from './components/Leaderboard'
 import store from './redux/store'
-import { Provider } from 'react-redux';
+import { Provider } from 'react-redux'
+import Login from './components/Login'
 
 function App() {
   return <>
@@ -19,6 +20,7 @@ function App() {
           <Route exact path='/' component={Home} />
           <Route exact path='/new' component={NewQuestion} />
           <Route exact path='/leaderboard' component={Leaderboard} />
+          <Route exact path='/login' component={Login} />
         </Switch>
       </BrowserRouter>
     </Provider>
