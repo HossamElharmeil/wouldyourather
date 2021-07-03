@@ -15,8 +15,7 @@ const Home = () => {
         dispatch(getQuestions())
     }, [dispatch])
 
-    return <div>
-        {authedUser === null && <Redirect to='/login' />}
+    return authedUser !== null ? <div>
         <ul className='questions'>
             {questionsEntries.map(([_, value]) => {
                 console.log(value)
@@ -26,6 +25,7 @@ const Home = () => {
             })}
         </ul>
     </div>
+        : <Redirect to='/login' />
 }
 
 export default Home
