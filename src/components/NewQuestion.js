@@ -1,5 +1,6 @@
 import { useState } from "react"
 import { useDispatch } from "react-redux"
+import { useHistory } from "react-router-dom"
 import { addQuestion } from "../redux/actions/questionsActions"
 
 const NewQuestion = () => {
@@ -7,11 +8,13 @@ const NewQuestion = () => {
     const [optionTwoText, setOptionTwoText] = useState('')
 
     const dispatch = useDispatch()
+    const history = useHistory()
 
     const handleSubmit = (e) => {
         e.preventDefault()
 
-        dispatch(addQuestion({optionOneText, optionTwoText, author: 'tylermcginnis'}))
+        dispatch(addQuestion({ optionOneText, optionTwoText, author: 'tylermcginnis' }))
+        history.push('/')
     }
 
     return <div className='new-question'>
