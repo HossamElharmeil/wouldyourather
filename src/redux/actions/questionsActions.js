@@ -1,5 +1,6 @@
-import { _getQuestions, _saveQuestion } from "../../_DATA"
+import { _getQuestions, _saveQuestion, _saveQuestionAnswer } from "../../_DATA"
 import { GET_QUESTIONS, SAVE_QUESTION } from "../reducers/questionsReducer"
+import { SAVE_ANSWER } from "../reducers/usersReducer"
 
 export const getQuestions = () => dispatch => {
     _getQuestions()
@@ -18,6 +19,19 @@ export const addQuestion = question => dispatch => {
             dispatch({
                 type: SAVE_QUESTION,
                 question: formattedQuestion
+            })
+        })
+}
+
+export const saveVote = (authedUser, qid, answer) => dispatch => {
+    _saveQuestionAnswer({ authedUser, qid, answer })
+        .then(_ => {
+            //TODO: update redux store
+            dispatch({
+                type: SAVE_ANSWER,
+                authedUser,
+                qid,
+                answer
             })
         })
 }
